@@ -128,4 +128,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - Replace placeholder values in the `.env` files with your actual credentials and configuration.
 - If you encounter any issues, check the logs for detailed error messages.
 
-This `README.md` file provides a comprehensive overview of the project, including setup instructions, environment configuration, and usage details.
