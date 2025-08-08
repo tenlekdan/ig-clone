@@ -16,6 +16,46 @@ This document outlines the frontend development rules for GitLab Duo, a React-ba
 * **Props**: Use TypeScript interfaces to define `props` for every component. This ensures type safety, provides a clear contract for how a component is used, and improves IDE support.
 * **Internal Library (`xyz`)**: Utilize components and utilities from our internal `xyz` library to maintain a consistent UI and avoid re-implementing common functionality.
 
+project structure(guidlines)
+├── src/
+│   ├── api/
+│   │   ├── index.ts              # Centralized Axios instance
+│   │   └── featureApi.ts         # API functions for a specific feature
+│   ├── hooks/
+│   │   ├── useSomeHook.ts        # Custom React hooks
+│   │   └── useApiCall.ts
+│   ├── types/
+│   │   ├── apiTypes.ts           # TypeScript interfaces for API responses
+│   │   └── componentTypes.ts     # TypeScript interfaces for component props
+│   ├── utility/
+│   │   ├── helpers.ts            # General helper functions (e.g., date formatting)
+│   │   └── validation.ts         # Validation utilities
+│   ├── context/
+│   │   ├── AuthContext.tsx       # Context providers and hooks
+│   │   └── ThemeContext.tsx
+│   ├── view/
+│   │   ├── feature1/             # Feature-specific components
+│   │   │   ├── Feature1Component.tsx
+│   │   │   └── sub-components/
+│   │   ├── feature2/
+│   │   │   └── Feature2Component.tsx
+│   │   ├── common/               # Reusable UI components
+│   │   │   ├── Button.tsx
+│   │   │   ├── Modal.tsx
+│   │   │   └── Spinner.tsx
+│   │   └── containers/           # Layout components
+│   │       ├── MainLayout.tsx
+│   │       └── AuthLayout.tsx
+│   ├── config/
+│   │   └── appConfig.ts          # Application-wide configuration (e.g., API URLs)
+│   ├── metadata/
+│   │   └── featureMetadata.ts    # Data for populating forms, dropdowns, etc.
+│   └── styles/
+│       ├── _mixins.scss          # SCSS mixins
+│       ├── _variables.scss       # SCSS variables
+│       └── global.scss           # Global styles
+└── ...
+
 ---
 
 ## 2. TypeScript and Clean Coding
